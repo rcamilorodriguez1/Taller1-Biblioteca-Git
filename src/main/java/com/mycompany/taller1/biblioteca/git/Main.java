@@ -102,4 +102,15 @@ public class Main {
  
         System.out.println("Libro actualizado.");
     }
+     static void eliminarLibro() {
+        System.out.print("Codigo del libro a eliminar: ");
+        String codigo = sc.nextLine();
+        Libro l = buscarLibro(codigo);
+        if (l == null) {
+            System.out.println("Libro no encontrado.");
+            return;
+        }
+        libros.remove(l);
+        System.out.println("Libro eliminado.");
+    }
 }
