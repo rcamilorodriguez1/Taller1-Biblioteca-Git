@@ -53,4 +53,14 @@ public class Main {
         libros.add(new Libro(codigo, titulo, anio, autor));
         System.out.println("Libro creado exitosamente.");
     }
+         static void listarLibros() {
+        if (libros.isEmpty()) {
+            System.out.println("No hay libros registrados.");
+            return;
+        }
+        System.out.println("\n-- Lista de Libros --");
+        for (Libro l : libros) {
+            System.out.println(l);
+        }
+    }
 }
