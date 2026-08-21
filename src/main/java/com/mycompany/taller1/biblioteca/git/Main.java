@@ -57,4 +57,14 @@ public class Main {
         clientes.add(new Cliente(id, nombre, telefono, email));
         System.out.println("Cliente creado exitosamente.");
     }
+    static void listarClientes() {
+        if (clientes.isEmpty()) {
+            System.out.println("No hay clientes registrados.");
+            return;
+        }
+        System.out.println("\n-- Lista de Clientes --");
+        for (Cliente c : clientes) {
+            System.out.println(c);
+        }
+    }
 }
