@@ -63,4 +63,21 @@ public class Main {
             System.out.println(l);
         }
     }
+         static Libro buscarLibro(String codigo) {
+        for (Libro l : libros) {
+            if (l.getCodigo().equalsIgnoreCase(codigo)) return l;
+        }
+        return null;
+    }
+ 
+    static void buscarLibroMenu() {
+        System.out.print("Codigo del libro a buscar: ");
+        String codigo = sc.nextLine();
+        Libro l = buscarLibro(codigo);
+        if (l == null) {
+            System.out.println("Libro no encontrado.");
+        } else {
+            System.out.println("Libro encontrado: " + l);
+        }
+    }
 }
