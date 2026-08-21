@@ -80,4 +80,26 @@ public class Main {
             System.out.println("Libro encontrado: " + l);
         }
     }
+     static void actualizarLibro() {
+        System.out.print("Codigo del libro a actualizar: ");
+        String codigo = sc.nextLine();
+        Libro l = buscarLibro(codigo);
+        if (l == null) {
+            System.out.println("Libro no encontrado.");
+            return;
+        }
+        System.out.print("Nuevo titulo (" + l.getTitulo() + "): ");
+        String titulo = sc.nextLine();
+        if (!titulo.isBlank()) l.setTitulo(titulo);
+ 
+        System.out.print("Nuevo autor (" + l.getAutor() + "): ");
+        String autor = sc.nextLine();
+        if (!autor.isBlank()) l.setAutor(autor);
+ 
+        System.out.print("Nuevo anio (" + l.getAnioPublic() + "): ");
+        String anio = sc.nextLine();
+        if (!anio.isBlank()) l.setAnioPublic(anio);
+ 
+        System.out.println("Libro actualizado.");
+    }
 }
