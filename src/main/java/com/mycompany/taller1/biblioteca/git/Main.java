@@ -67,4 +67,20 @@ public class Main {
             System.out.println(c);
         }
     }
+    static Cliente buscarCliente(String id) {
+        for (Cliente c : clientes) {
+            if (c.getId().equalsIgnoreCase(id)) return c;
+        }
+        return null;
+    }
+    static void buscarClienteMenu() {
+        System.out.print("ID del cliente a buscar: ");
+        String id = sc.nextLine();
+        Cliente c = buscarCliente(id);
+        if (c == null) {
+            System.out.println("Cliente no encontrado.");
+        } else {
+            System.out.println("Cliente encontrado: " + c);
+        }
+    }
 }
